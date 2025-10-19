@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Blue Aesthetic Website</title>
+    <style>
+      /* GENERAL */
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        background-color: DodgerBlue;
+        background: linear-gradient(to bottom right, #d9e9ff, LightBlue, DodgerBlue);
+        color: #003366;
+      }
+      section {
+        padding: 60px 10%;
+        background-image: url('pl.jpg');
+        background-repeat:norepeat;
+        background-position: center;
+        margin: 40px auto;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        max-width: 1100px;
+      }
+      header {
+        background-color: #0059b3;
+        color: white;
+        text-align: center;
+        padding: 25px 10px;
+        font-size: 2em;
+        font-weight: 600;
+        letter-spacing: 1px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      }
+      section {
+        padding: 60px 10%;
+        background-color: rgba(255,255,255,0.9);
+        margin: 40px auto;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        max-width: 1100px;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+      }
+      h2 {
+        text-align: center;
+        color: #004080;
+        margin-bottom: 40px;
+        letter-spacing: 1px;
+      }
+      /* ABOUT */
+      #personal .profile-pic {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: #cce0ff;
+        border: 4px solid #004080;
+        margin: 0 auto 30px;
+        display: block;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+      }
+      .about-boxes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        transform: scale(1.03);
+        transition: 0.3s;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+      }
+      .box {
+        background-color: DeepSkyBlue;
+        border: 4px solid #b3d1ff;
+        border-radius: 12px;
+        width: 280px;
+        height: 200px;
+        padding: 5px 15px 5px 25px;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease, border-color 0.3s ease;
+      }
+      .box:hover, .box:active, .lesson-box:hover, .lesson-box:active, .event-box:hover, .event-box:active, .ap-box:hover, .ap-box:active {
+        transition: 0.3s;
+        transform: scale(1.05);
+        border-color: #004080;
+        transition: transform 1.05s ease, border-color 1.05s ease;
+      }
+      .box:hover {
+        transform: scale(1.05);
+        border-color: #004080;
+        transition: 0.3s;
+        transform: scale(1.05);
+        border-color: #004080;
+        transition: transform 1.05s ease, border-color 1.05s ease;
+      }
+      .picture-box {
+        height: 220px;
+        padding: 0;
+        border: 2px solid #a0c4ff;
+        background-color: #e6f0ff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+      }
+      .picture-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+      }
+      img:hover, img:active {
+        transition: transform 1.05s ease, border-color 1.05s ease;
+        transform: scale(1.05);
+        border-color: DodgerBlue
+      }
+      .picture-box img:hover {
+        transition: transform 1.05s ease, border-color 1.05s ease;
+        transform: scale(1.05);
+        border-color: DodgerBlue
+      }
+      /* ICT LESSONS */
+      .lesson-box, .event-box, .ap-box {
+        background-color: white;
+        padding: 25px;
+        border-radius: 12px;
+        border: 2px solid DogerBlue;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        width: 280px;
+        transform: scale(1.05);
+        border-color: #004080;
+        background-color:DeepSkyBlue;
+        margin: 0 auto;
+        display: block;
+        text-align: center;
+      }
+      .highlight {background-color:DeepSkyBlue; border:2px Blue solid;}
+      .details {
+        display: none;
+        margin-top: 40px;
+        background-color: white;
+        border: 2px solid #b3d1ff;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transition: 0.3s;
+        transform: scale(1.03);
+        border-color: #004080;
+      }
+      .details:target { display: block; }
+      .media-space {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        margin: 0 auto;
+        height: 250px;
+        padding: 20px;
+        background-color: #e6f0ff;
+        border: 2px dashed #004080;
+        border-radius: 12px;
+        max-width: 750px;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+      }
+      .image-box-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        overflow-x: auto;
+        margin: 0 auto 20px;
+        padding: 10px 0;
+        background-color: #e6f0ff;
+        border: 2px solid #004080;
+        border-radius: 12px;
+        height: 200px;
+        width: 750px;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+      }
+
+      .image-box-container img {
+        width: 350px;
+        height: 180px;
+        object-fit: cover;
+        background-color: #e6f0ff;
+        border: 2px dashed #004080;
+        border-radius: 12px;
+        flex-shrink: 0;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+      }
+      .details .text-area {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #e6f0ff;
+        border: 2px solid #004080;
+        border-radius: 10px;
+        padding: 10px;
+        color: #003366;
+        max-width: 750px;
+        margin: 0 auto;
+        height: 190px;
+        transition: 0.3s;
+        transform: scale(1.03);
+        border-color: #004080;
+        background-color:DeepSkyBlue
+      }
+      .image-box-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+      .image-box-container img {
+        width: 300px;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      }
+      section {
+        padding: 100px 20px;
+        border-bottom: 1px solid #ccc;
+      }
+      nav {
+        background: #007bff;
+        padding: 10px;
+        text-align: center;
+      }
+      nav a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      nav a:hover {
+        text-decoration: underline;
+      }
+      .details .text-area {
+        flex: 1;
+        min-width: 350px;
+        background-color: DeepSkyBlue;
+        border: 2px solid #004080;
+        border-radius: 10px;
+        padding: 20px;
+        color: #003366;
+        font-family: Arial Black;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+      }
+      .details .text-area:hover {
+        transform: scale(1.02);
+      }
+      .details {
+        display: none;
+        padding: 20px;
+        margin-top: 40px;
+        background-color: white;
+        border: 2px solid #b3d1ff;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transform: scale(1.03);
+        border-color: #004080;
+      }
+.details .text-area {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 15px auto;
+  background-color: #f2f2f2;
+  padding: 15px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+/* Optional grid layout on wider screens */
+@media (min-width: 768px) {
+  .details {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .details .text-area-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .details .text-area-container .text-area {
+    width: 32%;
+  }
+}
+
+.media-gallery { 
+display: flex; justify-content: 
+center; gap: 20px; flex-wrap: wrap; 
+margin: 20px auto; max-width: 900px; 
+transition: transform 0.3s ease, 
+border-color 0.3s ease; } 
+
+.media-box { 
+width: 280px; height: 180px; background-color: 
+#e6f0ff; border: 2px dashed #004080; 
+border-radius: 12px; overflow: hidden; display: 
+flex; align-items: center; justify-content: center; 
+transition: transform 0.3s ease, border-color 0.3s ease; } 
+
+.media-box img, .media-box video { 
+width: 100%; height: 100%; object-fit: cover; 
+border-radius: 10px; transition: transform 0.3s ease, 
+border-color 0.3s ease; }
+
+      /* Mobile responsive */
+      @media (max-width: 768px) {
+        .ap-lesson-layout {
+          flex-direction: column;
+          align-items: center;
+        }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#personal">Personal Page</a>
+      <a href="#ict-lessons">ICT Lessons</a>
+      <a href="#ap-lessons">AP Lessons</a>
+    </nav>
+    <header>Welcome To My E-Portfolio</header>
+    <!-- ABOUT SECTION -->
+    <section id="personal"> 
+      <a href="homepage.html"><span class="highlight">Home</span></a>
+      <h2>About Myself</h2>
+      <img src="myself.jpg" class="profile-pic" alt="Profile Picture" />
+      <div class="about-boxes">
+        <div class="box">
+          <h3><b>Personal Details</b></h3>
+          <p style="font-size:13px">
+            My name is Mike Aldrin Talatagod, I am 15 years old. My birthdate is 08-06-2010. I have so many favorite 
+things like color blue, the series "Lovely Runner". I also love any songs from Taylor Swift and I don't have any favorite 
+subjects, because I think I could excel at everything. Aside from those, I consider all the people that teach me a lesson 
+as my favorite. My favorite food is Adobo.
+          </p>
+        </div>
+        <div class="box">
+          <h3><b>Circle Of Friends</b></h3>
+          <p style="font-size:13px">
+            Being friends with them, I felt relieved. I finally felt what a perfect friendship is. Having them always made 
+me feel comfortable and safe, they always guide me in my study and choices in life. Even though we don’t interact as much now, 
+I am confidently sure they still consider me as their best friend, same as me
+          </p>
+        </div>
+        <div class="box">
+          <h3><b>My Family</b></h3>
+          <p style="font-size:13px">
+            Having them in my life already made me feel successful. Being with them always makes me feel at home. They always 
+give me happiness. My family, though sometimes untangled, still manages to cope up. My family is simple but full of love and care. 
+Everything from our perspective is equal. My family has taught me so many lessons in life making me more aware about the environment.
+          </p>
+        </div>
+      </div>
+      <div class="about-boxes">
+        <div class="box picture-box">
+          <img src="myself2.jpg" alt="picture of myself" />
+        </div>
+        <div class="box picture-box">
+          <img src="cof.jpg" alt="picture with my circle of friends" />
+        </div>
+        <div class="box picture-box">
+          <img src="fam.jpg" alt="picture with my family" />
+        </div>
+      </div>
+    </section>
+    <!-- ICT LESSONS SECTION -->
+    <section id="ict-lessons">
+     <a href="homepage.html"><span class="highlight">Home</span></a>
+      <h2>ICT Lessons & Events</h2>
+      <div class="center-boxes">
+        <div class="lesson-box">
+          <h3>📘 Lessons</h3>
+          <a href="#lesson1">Lesson 1</a><br>
+          <a href="#lesson2">Lesson 2</a><br>
+          <a href="#lesson3">Lesson 3</a><br>
+          <a href="#lesson4">Lesson 4</a><br>
+          <a href="#lesson5">Lesson 5</a><br>
+          <a href="#lesson6">Lesson 6</a>
+        </div>
+        <div class="event-box" style="margin-top:40px;">
+          <h3>🎉 Events</h3>
+          <a href="#event1">Buwan ng Wika</a><br>
+          <a href="#event2">Intrams</a><br>
+          <a href="#event3">Science Month</a><br>
+          <a href="#event4">AP Month</a><br>
+          <a href="#event5">Teachers Day</a><br>
+        </div>
+      </div>
+    </section>
+      <!-- AP LESSONS SECTION -->
+    <section id="ap-lessons">
+     <a href="homepage.html"><span class="highlight">Home</span></a>
+      <h2>AP Lessons</h2>
+      <div class="center-boxes">
+        <div class="ap-box">
+          <a href="#ap1">Lesson 1</a><br>
+          <a href="#ap2">Lesson 2</a><br>
+          <a href="#ap3">Lesson 3</a><br>
+          <a href="#ap4">Lesson 4</a><br>
+          <a href="#ap5">Lesson 5</a><br>
+          <a href="#ap6">Lesson 6</a><br>
+        </div>
+      </div>
+    </section>
+   
+    <div id="lesson1" class="details">
+      <a href="#ict-lessons" style="display: block; margin-bottom: 15px; color: #004080;"><span class="highlight">← Back to Lessons</span></a>
+      <div class="image-box-container">
+        <img src="basic.jpg" alt="html code of basic css">
+        <img src="outputbasic.jpg" alt="the result of the code">
+      </div>
+      <div class="text-area">
+        <p style="font-size:15px; font-family: Arial Black;">
+          First of all, I have learned what a CSS stylesheet. From the meaning of its abbreviation to the pre-requisites. But, 
+first of all, I acknowleged the importance of CSS, its benefits, how to use it, and how it helps a partcular person in creating 
+their own webpage. At this lesson, CSS was introduced. I learned more about the definition of CSS and its basic codes and syntax. 
+I also reflect about the layers of the webpage, which are: Presentation, Behavior, and Content. I was also able to learn the capabilities 
+of CSS and how it should be accounted as a student.
+        </p>
+      </div>
+    </div>
+    <div id="lesson2" class="details">
+      <a href="#ict-lessons" style="display: block; margin-bottom: 15px; color: #004080;"><span class="highlight">← Back to Lessons</span></a>
+      <div class="image-box-container">
+        <img src="2nd.jpg" alt="An embedded styslesheet code" />
+        <img src="2ndresult.jpg" alt="result of this code" />
+      </div>
+      <div class="text-area">
+        <p style="font-size:15px; font-family: Arial Black;">
+          Proceeding to the lesson 2, I was able to adopt how the CSS realy works. I was able to partially comprehend how every of the 
+codes work. Upon learning this part of the lesson, I got excited, because, we were able to practice the coding. This lesson tackles the 
+structure of CSS, its basic components on how it works, and its foundation. This part lectured about the type of stylesheets, which are: 
+Inline, Embedded, and External. Learning this lesson, made me acknowledge the complexity of the codes when it comes to the kinds of stylesheets.
+        </p>
+      </div>
+    </div>
+    <div id="lesson3" class="details">
+      <a href="#ict-lessons" style="display: block; margin-bottom: 15px; color: #004080;"><span class="highlight">← Back to Lessons</span></a>
+      <div class="image-box-container">
+        <img src="3rd.jpg" alt="code caontaining block-level display" />
+        <img src="3rdresult.jpg" alt="result of the code with block level display" />
+      </div>
+      <div class="text-area">
+        <p style="font-size:15px; font-family: Arial Black;">
+          This lesson focuses more on the stylesheets, which helped me increase my knowledge and helped me master the syntax and codes. In 
+this lesson, I have learned the display property that controls how an element is dispalyed. Under this diplay properties, there are 2 elements 
+which are: Block Level Elements and Inline Level Elements. This lesson helped me to acknowledge again its valuability through knowing its codes 
+and syntax. Here, two tags were introduced, the Div and Span tags, who does not have any styling attributes.
+        </p>
+      </div>
+    </div>
+    <div id="lesson4" class="details">
+      <a href="#ict-lessons" style="display: block; margin-bottom: 15px; color: #004080;"><span class="highlight">← Back to Lessons</span></a>
+      <div class="image-box-container">
+        <img src="4th.jpg" alt="codes related to selectors and declarations" />
+        <img src="4thresult.jpg" alt="=result of tthe code" />
+      </div>
+      <div class="text-area">
+        <p style="font-size:15px; font-family: Arial Black;">
+          Lesson 4 helped me learn more on the important parts of CSS, these are (1) Selectors and (2) Declarations. Where the selectore 
+is the tag that you want to modify while the declarations are the styling elements that you will use. I was able to know the good features 
+and the consept of CSS. Through this lesson, I was able to comprehend about the different elements of CSS. I can conclude that CSS basing on 
+this lesson, that it is reliable and accountable. CSS also follow many techniques that allow multiple element.
+        </p>
+      </div>
+    </div>
+    <div id="lesson5" class="details">
+      <a href="#ict-lessons" style="display: block; margin-bottom: 15px; color: #004080;"><span class="highlight">← Back to Lessons</span></a>
+      <div class="image-box-container">
+        <img src="5th.jpg" alt="Lesson 1 Image 1" />
+        <img src="5thresult.jpg" alt="Lesson 1 Image 2" />
+      </div>
+      <div class="text-area">
+        <p style="font-size:15px; font-family: Arial Black;">
+          Lesson 5 talked more of about selectors, how it helps the CSS structure, and how it developed a webpage. This lesson, focuses on 
+the importance of the different type of the selectors in constructing your websire. It can be an ID selector, Univerdsl selector, Element 
+selector and etc. Upon studying lesson 5 I can conclude that: selectors are used to target HTML elements so you can style them. Each selector 
+type helps control how styles are applied on a webpage. It shows the viability of these selectors.
+        </p>
+      </div>
+    </div>
+    <div id="lesson6" class="details">
+      <a href="#ict-lessons" style="display: block; margin-bottom: 15px; color: #004080;"><span class="highlight">← Back to Lessons</span></a>
+      <div class="image-box-container">
+        <img src="6th.jpg" alt="Lesson 1 Image 1" />
+        <img src="6thresult.jpg" alt="Lesson 1 Image 2" />
+      </div>
+      <div class="text-area">
+        <p style="font-size:15px; font-family: Arial Black;">
+          First, the size of objects on a webpage, including sections, images, and containers, is referred to as HTML dimensions. The 
+width and height are typically used to define dimensions. Then, CSS special keywords known as pseudo-classes target elements according 
+to their state or user interaction. They enable developers to dynamically add styles without altering the structure of HTML. The :hover 
+pseudo-class, for example, makes the interface more interactive and intuitive by altering how a button or link appears when the user moves 
+the mouse over it.
+        </p>
+      </div>
+    </div>
+    <!-- ICT EVENT DETAILS -->
+    <!-- Buwan ng Wika -->
+    <div id="event1" class="details">
+      <a href="#ict-lessons" style="display: block; margin-bottom: 15px; color: #004080;">
+        <span class="highlight">← Back to Events</span>
+      </a>
+      <div class="media-gallery">
+        <div class="media-box">
+          <img src="buwan1.jpg" alt="Buwan ng Wika photo 1" />
+        </div>
+        <div class="media-box">
+          <img src="buwan2.jpg" alt="Buwan ng Wika photo 2" />
+        </div>
+        <div class="media-box">
+          <video controls>
+            <source src="fil1.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <div class="text-area">
+        <p style="font-size:12px; font-family: Arial Black;">
+          Buwan ng Wika have thought me to love and cherish more about our culture. I have learned how to respect others even if 
+we all have different culures. Through communicating with others using Filipino language is one of the way to apply this event i our 
+life. Also, through giving values to other, despite differences is also a way to show it. Yes!, I am happy to say that I did join this 
+competition and I won!!!, I joined the Filipino quiz bee, I competed with other grade 9 students & fortunately I got 2nd place. Basically, 
+if I could teach this topic to a certain person, I would teach them through showing its importance and through also using Filipino language 
+to emphasize and to show how proud am I to be a Filipino. Its importance, is of course to spread knowledge about our "WIKA" and to also 
+acknowledge oher people and to know how are we gonna respect them
+        </p>
+      </div>
+    </div>
+    <!-- Intrams -->
+    <div id="event2" class="details">
+      <a href="#ict-lessons" style="display: block; margin-bottom: 15px; color: #004080;">
+        <span class="highlight">← Back to Events</span>
+      </a>
+      <div class="media-gallery">
+        <div class="media-box">
+          <img src="intrams1.jpg" alt="Intrams photo 1" />
+        </div>
+        <div class="media-box">
+          <img src="intrams2.jpg" alt="Intrams photo 2" />
+        </div>
+        <div class="media-box">
+          <video controls>
+            <source src="invid.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <div class="text-area">
+        <p style="font-size:12px; font-family: Arial Black;">
+          The most important things that I have learned throughout the intrams is sportsmanship. Seeing each others bow after the 
+game made me smile, because sportsmanship is a way to express how thankful you are to compete against ohers. I can apply this lesson 
+in my life is of course, whenever I'm competing against other, wether physical or mental, I will always be thankful to them. Even if 
+I was not able to join this intrams, I was still happy not just because of the games but also because I was able to support my schoolmates. 
+Teaching this kind of stuff would be easy, through showing them the right actions, it will already let them feel what a true sportsmanship 
+is. It is important to have such this kind of event, because students will be able to showcase their talent and strengts. Also, this event 
+leads to more and more friendship, making it so happy.
+        </p>
+      </div>
+    </div>
+    <!-- Science Month -->
+    <div id="event3" class="details">
+      <a href="#ict-lessons" style="display: block; margin-bottom: 15px; color: #004080;">
+        <span class="highlight">← Back to Events</span>
+      </a>
+      <div class="media-gallery">
+        <div class="media-box">
+          <img src="science1.jpg" alt="Science Month photo 1" />
+        </div>
+        <div class="media-box">
+          <img src="science2.jpg" alt="Science Month photo 2" />
+        </div>
+        <div class="media-box">
+          <video controls>
+            <source src="sci.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <div class="text-area">
+        <p style="font-size:12px; font-family: Arial Black;">
+          This event thought me on how to be an innovative and creative student, it helped to to expand my knowledge abou Science. 
+I also have learned to explore and be open-minded in everything. I can apply this knowledge that I have learned, through making 
+research, not to showcase, but to solve a certain issue or problems in our society. I did not participate on my own, rather, I 
+participated with my classmates. We compeed against other grade 9 in school through creating an innovative design. The competition 
+was named "WINS Corner". If I were to teach this kind of things, I would to it through showing how innovative I am. Also, as a 
+student myself, it would be really hard to teach this but it is possible. This event matters, not just because it shows competition, 
+but because it opens the mind of every people to be creative and innovative Reflection about Science Month goes here.
+        </p>
+      </div>
+    </div>
+    <!-- AP Month -->
+    <div id="event4" class="details">
+      <a href="#ict-lessons" style="display: block; margin-bottom: 15px; color: #004080;">
+        <span class="highlight">← Back to Events</span>
+      </a>
+      <div class="media-gallery">
+        <div class="media-box">
+          <img src="ap_month_img1.jpg" alt="AP Month photo 1" />
+        </div>
+        <div class="media-box">
+          <img src="ap_month_img2.jpg" alt="AP Month photo 2" />
+        </div>
+        <div class="media-box">
+          <video controls>
+            <source src="ap_month_video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <div class="text-area">
+        <p style="font-size:12px; font-family: Arial Black;">
+          AP month have taught me more of about the hisory, it signifies power and voice. Applying this would be difficult, but I 
+could do it through respecting the history and giving significance about the creation of the other old people. Though, I was not able 
+to paricipate in this event, still, I was able to hear the coive and power that a Lapiscian students hold. I've heared a lot about their 
+perspective in different social issues that is currently happening in our society. If I were to teach this stuffs, I would do it through
+emphasizing and standing through my voice and showcasing other what can we do to fight for social issues. It is important to have this kind 
+of event, due to the fact that it helps people to enlighten what our sociey is currently experiencing. This also represents the rights that 
+we can all voice out.
+        </p>
+      </div>
+    </div>
+    <!-- Teacher's Day -->
+    <div id="event5" class="details">
+      <a href="#ict-lessons" style="display: block; margin-bottom: 15px; color: #004080;">
+        <span class="highlight">← Back to Events</span>
+      </a>
+      <div class="media-gallery">
+        <div class="media-box">
+          <img src="teacher1.jpg" alt="Teachers Day photo 1" />
+        </div>
+        <div class="media-box">
+          <img src="teacher2.jpg" alt="Teachers Day photo 2" />
+        </div>
+        <div class="media-box">
+          <video controls>
+            <source src="tvid.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <div class="text-area">
+        <p style="font-size:15px; font-family: Arial Black;">
+          What I've learned to this event is to love your teacher, just like how they teach you. I have learned on how to be a 
+responisble and good studeny. I can apply those things, by of course showing how I love the teachers is, I can also apply this 
+through respecting them. Everyone participated this month, because everyone is belong. I participated to this event, by celebrating 
+the day for teachers. If I were to teach it to someone, I will do it, through showing them how I love every teacher is, I will show 
+them how to make your teachers happy. It is important to have this event, to give appreciation for the teachers and to let them feel 
+that they are seen and valued.
+        </p>
+      </div>
+    </div>
+
+    <!-- AP LESSONS -->
+<!-- AP LESSON 1 -->
+<div id="ap1" class="details">
+  <a href="#ap-lessons" style="display: block; margin-bottom: 15px; color: #004080;">
+    <span class="highlight">← Back to AP Lessons</span>
+  </a>
+  <div class="image-box-container">
+    <img src="demand1.webp" alt="AP Lesson 1 image 1" />
+    <img src="demand2.jpg" alt="AP Lesson 1 image 2" />
+  </div>
+  <div class="text-area-container">
+  <div class="text-area"><p style="font-size:12px; font-family:Arial;"><b>KONSEPTO NG DEMAND</b> - Tumutukoy sa dami ng produkto o serbisyo na gusto at kayang bilhin ng 
+mga mamimili sa isang takdang presyo at particular na panahon Ang kakayahan at kagustuhan ng tao na makamit at bilhin 
+ang isang o serbisyo ang produkto kanyang nagtatakda pangangailangan at kagustuhan.<br>
+<b>KAUGNAYAN NG PRESYO SA DEMAND NG TAO</b>
+Ang presyo pinakamahalagang nagtatakda (determinant) sa dami ng demand<br>
+<b>BATAS NG DEMAND</b> - Kapag tumataas ang presyo, bumababa ang dami ng gusto at kayang bilhin, at kapag bumababa ang presyo, tatas naman 
+ang dami ng gusto at kayang bilhin. (Ceteris Paribus)
+ng</p></div>
+  <div class="text-area"><p style="font-size:12px; font-family:Arial;"><b>CETERIS PARIBUS</b> - Ito ay nangangahulugang ipinagpapalagay na ang presyo lamang ang salik na nakaaapekto sa pagbabago ng quantity demanded, 
+habang ang ibang salik ay hindi nagbabago o nakakaapekto rito. Nagpapahayag na mas malaki ang halaga ng kinikita kapag mas 
+mababa ang presyo<br>
+<b>MATHEMATICAL FORMULA</b> - Demand = Kagustuhan + Kakayahan
+<b>♡ DEMAND FUNCTION QD</b> - Matematikong pagpapakita o paglalahad sa ugnayan ng presyo at quantity demanded sa pamamagitan ng fomula (Qd) Qd = a - bP<br>
+Qd = dami ng demand<br>
+a = dami ng demang kung ang free presyo ay 0<br>
+b = slope ng demang function-interval na pagbabago > P = presyo
+</p></div>
+  <div class="text-area"><p style="font-size:12px; font-family:Arial;"><b>DEMAND SCHEDULE</b> - Tsart na nagpapakita ng bilang ng mga kalakal o serbisyo na 
+hinihiling sa mga tiyak na presyo Isang talahanayan na nagpapakita ng ugnayan sa pagitan ng presyo ng mga kalakal at ang halaga ng mga kalakal na 
+nais bayaran ng mga mamimili sa kanila sa presyo na iyon<br>
+<b>DEMAND CURVE</b> - flow of representation grapikong representasyon ng Batas ng Demand Isang linya (tuwid o kurba) na nagpapakita ng negatibong
+relasyon ng presyo ng isang produkto at ang bilang ng produktong handang bilhin ng mamimili (lagyan ng label)</div>
+</div>
+
+</div>
+
+<!-- AP LESSON 2 -->
+<div id="ap2" class="details">
+  <a href="#ap-lessons" style="display: block; margin-bottom: 15px; color: #004080;">
+    <span class="highlight">← Back to AP Lessons</span>
+  </a>
+  <div class="image-box-container">
+    <img src="supply2.jpg" alt="AP Lesson 2 image 1" />
+    <img src="supply1.PNG" alt="AP Lesson 2 image 2" />
+  </div>
+  <div class="text-area-container">
+  <div class="text-area"><p style="font-size:12px; font-family:Arial;"><b>SUPPLY/PANUSTOS</b> - Dami ng produkto o serbisyo na gustong ibenta ng mga
+prodyuser sa isang takdang presyo at partikular na panahon.<br>
+<b>KAUGNAYAN NG PRESYO SA SUPPLY NG MGA PRODUKTO</b> - presyo pinakamahalagang nagtatakda (determinant) sa dami ng supply<br>
+<b>BATAS NG SUPPLY</b> - Kapag tumataas ang presyo, tataas ang dami ng gusto at kayang ibenta, at kapag bumababa ang presyo, 
+bababa naman ang dami ng gusto at kayang ibenta. (ceteris paribus)</p>
+</div>
+  <div class="text-area"><p style="font-size:12px; font-family:Arial;"><b>MATHEMATICAL FORMULA</b> - Supply = Pagnanais + Kakayahan<br>
+<b>SUPPLY SCHEDULE</b> - Talahanayang nagpapakita kung gaano karaming produkto o serbisyo ang nais gawin ng mga prodyuser<br>
+<b>SUPPLY CURVE</b> - Grapikong representasyon kung gaano karaming produkto o serbisyo ang nais gawin ng mga prodyuser<br>
+<b>SUPPLY FUNCTION</b> - Isang mathematical equation na nagpapakita sa relasyon ng dami<br>
+</p></div>
+  <div class="text-area"><p style="font-size:12px; font-family:Arial;"><b>SALIK NA NAKAKAAPEKTO</b><br>
+1. Pagbabago sa halaga ng mga salik ng produksyon<br>
+2. Pagbabago sa bilang ng mga nagtitinda<br>
+3. Pagbabago sa presyo ng kaugnay na produkto (Complementary at Substitute Products)<br>
+4. Ekspektasyon ng presyo<br>
+5. Okasyon/Tradisyon<br></p>
+</div>
+</div>
+
+</div>
+
+<!-- AP LESSON 3 -->
+<div id="ap3" class="details">
+  <a href="#ap-lessons" style="display: block; margin-bottom: 15px; color: #004080;">
+    <span class="highlight">← Back to AP Lessons</span>
+  </a>
+  <div class="image-box-container">
+    <img src="elastic1.png" alt="AP Lesson 3 image 1" />
+    <img src="elastic2.jpg" alt="AP Lesson 3 image 2" />
+  </div>
+ <div class="text-area-container">
+  <div class="text-area"><p style="font-size:12px; font-family:Arial;"><b>ELASTISIDAD</b> - Pamamaraan upang masukat ang pagtugon 
+ng mga mamimili at nagtitinda sa pagbabago ng presyo. <br>
+<b>ELASTISIDAD NG DEMAND</b> - Ang kurba ng demand ay pabulusok kapag mababa ang halaga ng produkto maraming konsyumer ang makabibili 
+kaya't maraming produkto at serbisyo ang mabibili subalit kapag ang presyo ay mataas,mababa ang kakayahang makabili o hindi na makabili ang
+maraming konsyumer. Kapag mababa ang presyo malaki ang demand, subalit kapag mataas ang presyo ay nanaisin na lamang na bumili ng alternatibong pamalit <br>
+<b>ELASTISIDAD NG SUPPLY</b> - Kapag mataas ang presyo ng isang bilihin tataas ang dami ng produktong handing ipagbili sa isang takdang panahon 
+Kapag mababa ang isang presyo ng bilihin, bababa rin ang presyo ng produktong nais ipagbili sa isang takdang panahon</p>
+</div>
+  <div class="text-area"><p style="font-size:12px; font-family:Arial;"><b>URI NG ELASTIK</b><br>
+<b>1. ELASTIK</b> - Nangyayari kapag ang kaunting pagbabago sa presyo ay nagdudulot ng malaking pagbabago sa dami ng demand.<br>
+<b>2. DI-ELASTIK</b> - Kapag maliit ang naging bahagdan ng pagtugon ng quantity demanded quantity supplied kaysa sa bahagdan ng pagbabago ng presyo /E/<1<br>
+<b>3. UNITARY</b> - Pareho ang bahagdan ng pagbabago ng presyo sa bahagdan ng quantity demanded /E/= 1<br>
+<b>4. GANAP NA ELASTIK</b> - Anumang pagbabago sa presyo ay magdudulot ng infinite na pagbabago sa quantity demanded/quantity supplied /E/00<br>
+</p>
+</div>
+  <div class="text-area"><p style="font-size:12px; font-family:Arial;"><b>5. DI-GANAP NA ELASTIK</b> - Nangangahulugan na ang quantity demanded 1 
+quantity supplied ay hindi tumutugon sa pagbabago ng presyo /E/0<br>
+<b>DAGDAG IMPORMASYON</b><br>
+- Ang elastisidad sa ekonomiks ay tumutukoy sa antas ng pagtugon o pagbabago ng dami ng 
+demand o supply ng isang produkto kapag may pagbabago sa presyo, kita, o ibang salik. Ibig sabihin, sinusukat nito kung gaano kalaki ang epekto ng isang pagbabago 
+sa ekonomiya (tulad ng presyo) sa pag-uugali ng mamimili o prodyuser.</p>
+</div>
+</div>
+
+<!-- AP LESSON 4 -->
+<div id="ap4" class="details">
+  <a href="#ap-lessons" style="display: block; margin-bottom: 15px; color: #004080;">
+    <span class="highlight">← Back to AP Lessons</span>
+  </a>
+  <div class="image-box-container">
+    <img src="dis1.png" alt="AP Lesson 4 image 1" />
+    <img src="equ.jpg" alt="AP Lesson 4 image 2" />
+  </div>
+ <div class="text-area-container">
+  <div class="text-area"><p style="font-size:12px; font-family:Arial;"><b>EQULIBRIUM</b> - Isang kalagayan na walang ang gustong baguhin ang kasalukuyang sitwasyon 
+sa pamilihan sinuman sa mamimili at nagbibili ipinapakita nito ang pagkakasundo ng bumibili at nagbibili sa isang takdang presyo at dami produkto.<br>
+<b>MGA KAGANAPAN SA PAGBABAGO SA PAMILIHAN</b>
+1. Paglipat ng supply curve pakanan subalit walang pagbabago sa demand curve
+2. Paglipat ng supply curve pakaliwa subalit walang pagbabago sa demand curve
+3. Paglipat
+pakanan ng demand curve subalit pagbabago sa supply curve walang
+4. Paglipat ng demand curve pakaliwa subalit walang pagbabago sa supply curve</p>
+
+</div>
+  <div class="text-area"><p style="font-size:12px; font-family:Arial;"><b>DISEQULIBRIUM</b> - Ang dami ng demand ay maaaring kulang o sobra sa dami ng supply dami ng 
+Demand = Dami ng Supply<br>
+<b>SURPLUS</b> - Mas Ang dami ng supply ay marami kung ihahambing sa dami ng demand dami ng Demand < Dami ng Supply<br>
+<b>SHORTAGE</b> - Ang dami ng demand ay mas marami kung ihahambing sa dami ng supply dami ng Demand > Dami ng Supply
+
+</div>
+  <div class="text-area"><p style="font-size:12px; font-family:Arial;">
+5. Parehas ang paglipat ng demand at supply curve pakanan sa parehas na bahagdan<br>
+6. Paheras ang paglipat ng demandat supply curve pakaliwa sa parehas na bahagdan<br>
+7. Parehas na lumipat ang demand at supply curve pakanan subalit mas malaki ang bahagdan ng pagbabago ng demand sa supply<br>
+8. Parehas na lumipat ang demand at supply curve pakanan subalit mas maliit ang bahagdan ng pagbabago ng demand sa supply<br>
+9. Parehas na lumipat ang demand at supply curve pakanan subalit mas malaki ang bahagdan ng pagbabago ng supply kaysa sa demand<br></p>
+
+</div>
+</div>
+
+  </div>
+</div>
+
+<!-- AP LESSON 5 -->
+<div id="ap5" class="details">
+  <a href="#ap-lessons" style="display: block; margin-bottom: 15px; color: #004080;">
+    <span class="highlight">← Back to AP Lessons</span>
+  </a>
+  <div class="image-box-container">
+    <img src="est.jpg" alt="AP Lesson 5 image 1" />
+    <img src="est2.jpg" alt="AP Lesson 5 image 2" />
+  </div>
+ <div class="text-area-container">
+  <div class="text-area"><p style="font-size:12px; font-family:Arial;"><b>ESTRUKTURA NG PAMAHALAAN</b><br>
+<b>1. PURE COMPETITION</b> - Isang uri ng pamilihan kung saan maraming mamimili at nagbebenta. Ang mga produkto ay magkakatulad o pare-pareho
+kaya’t walang sinuman ang may kakayahang kontrolin ang presyo.<br>
+<b>2. MONOPOLYO</b> - ay kabaligtaran ng ganap na kompetisyon. Dito, iisa lamang ang kompanya o prodyuser na gumagawa at nagbebenta ng isang 
+produkto na walang kapalit. Dahil dito, hawak niya ang buong kontrol sa presyo at suplay.<br>
+</p>
+</div>
+  <div class="text-area"><p style="font-size:12px; font-family:Arial;"><b>3. MONOPSONYO</b> - isang uri ng pamilihan kung saan iisa lamang ang 
+mamimili at maraming prodyuser. Kabaligtaran ito ng monopolyo. Karaniwang halimbawa nito ay ang pamahalaan, na siyang tanging bumibili ng ilang 
+produkto o serbisyo gaya ng armas o mga proyektong pang-imprastruktura.<br>
+<b>4. OLIGOPOLYO</b> - tumutukoy sa pamilihan na may kakaunting kompanya na may malaking bahagi sa pagbebenta ng produkto. Maaaring magkakatulad ang 
+produkto (tulad ng langis) o maaaring may kaunting pagkakaiba. Sa ganitong istruktura, ang bawat kompanya ay may kakayahang makaapekto sa presyo, at 
+madalas ay may kasunduan o “pakikiramdaman” sa pagitan nila upang mapanatili ang kita.<br>
+</p>
+</div>
+  <div class="text-area"><p style="font-size:12px; font-family:Arial;"><b>5. MONOPOLISTIC COMPETITION</b> - May katangian ng parehong 
+ganap na kompetisyon at monopolyo. Sa pamilihang ito, maraming kompanya ang nagbebenta ng mga produkto na halos magkakatulad ngunit may kaunting pagkakaiba 
+sa disenyo, kalidad, o tatak.<br>
+<b>KONKLUSYON</b>
+- Mahalaga ang pag-unawa sa mga istrukturang ito ng pamilihan upang maintindihan kung paano umiikot ang ekonomiya, paano naitatakda ang presyo, at paano 
+naipapamahagi ang mga produkto at serbisyo sa lipunan. Sa pamamagitan ng wastong kaalaman, maaaring makagawa ang mga mamamayan at pamahalaan ng mas 
+matalinong desisyon pagdating sa kalakalan at ekonomiyang pampubliko.</p>
+</div>
+</div>
+</div>
+
+-- AP LESSON 6 -->
+<div id="ap6" class="details">
+  <a href="#ap-lessons" style="display: block; margin-bottom: 15px; color: #004080;">
+    <span class="highlight">← Back to AP Lessons</span>
+  </a>
+  <div class="image-box-container">
+    <img src="loc1.PNG" alt="AP Lesson 6 image 1" />
+    <img src="loc2.PNG" alt="AP Lesson 6 image 2" />
+  </div>
+  <div class="text-area-container">
+  <div class="text-area"><p style="font-size:12px; font-family:Arial;"><b>ANG PAGKONTROL NG PRESYO NG PAMAHALAAN</b><br>
+<b>PRICE CONTROL</b> - Ito ay ang pagtatakda ng pamahalaan sa pinakamababa at pinakamataas na presyo ng produkto, na bibilihin ng mga tao. Ito 
+rin ay para limitahan o itakda ang presyo ng mga bilihin at serbisyo sa merkado.<br>
+<b>REPUBLIC ACT 7581</b> - Kilala sa tawag na Price Control Act, na may layunin na maisagawa ng pamahalaan ang pagkontrol sa presyo ng mga bilihin.<br>
+<b>NATIONAL PRICE COORDINATIONCOUNCIL</b> - Ito ay may layunin na mabantayan ang presyo ng mga produkto pagkatapos magpalabas ng price ceiling ang pamahalaan.<br></p>
+</div>
+  <div class="text-area"><p style="font-size:12px; font-family:Arial;"><b>PRICE CEILING</b> - Ito ay ang pinakamataas na itinakda presyo ng pamahalaan upang ipagbili ang mga produkto. Ito ay ang pinakamataas 
+na presyong itinakda ng pamahalaan upang ipagbili ang mga produkto. Ito ay isinasagawa ng pamahalaan upang tulungan at bigyang proteksyon ang mga mamimili laban 
+sa mga mapagsamantalang abusado at mga negosyante<br>
+<b>PRICE SUPPORT</b> - Ito ay isinasagawa ng pamahalaan upang tulungan at bigyang proteksyon ang mga prodyuser upang mabayaran ang mga gastos ng produksyon.
+</p>
+</div>
+  <div class="text-area"><p style="font-size:12px; font-family:Arial;"><b>PRICE FREEZE</b> - ipinagbabawal ng pamahalaan ang anumang pagbabago o pagtaas sa presyo 
+ng mga produkto o serbisyo sa isang takdang panahon. Ibig sabihin, mananatili ang presyo sa kasalukuyang halaga kahit may pagtaas ng demand o pagtaas ng gastos sa 
+produksyon.<br>
+<b>PRICE FLOOR</b> - Ito ay ang pinakamababa na presyong itinakda ng pamahalaan upang ipagbili ang mga produkto.</p>
+
+</div>
+</div>
+
+</div>
+  </body>
+</html>
